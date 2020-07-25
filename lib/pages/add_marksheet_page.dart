@@ -287,56 +287,70 @@ class _AddMarksheetState extends State<AddMarksheet> {
       Padding(
           padding: const EdgeInsets.only(
               left: 0.0, right: 0.0, top: 10.0, bottom: 0.0),
-          child: Container(
-              width: double.infinity,
-              height: 50.0,
-              decoration: BoxDecoration(
-                color: Color(0xff262AAA),
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    topRight: Radius.circular(15),
-                    bottomLeft: Radius.circular(15),
-                    bottomRight: Radius.circular(15)),
-              ),
-              margin: EdgeInsets.only(
-                  left: 10.0, top: 0.0, right: 10.0, bottom: 0.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Row(
+          child: Expanded(
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  showDialog(
+                      context: context,
+                      builder: (_) {
+                        return MyDialog();
+                      });
+                });
+              },
+              child: Container(
+                  width: double.infinity,
+                  height: 50.0,
+                  decoration: BoxDecoration(
+                    color: Color(0xff262AAA),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15),
+                        bottomLeft: Radius.circular(15),
+                        bottomRight: Radius.circular(15)),
+                  ),
+                  margin: EdgeInsets.only(
+                      left: 10.0, top: 0.0, right: 10.0, bottom: 0.0),
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.only(left: 20.0, top: 10.0),
+                            child: Text(
+                              'Adarsh',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12.0,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(right: 20.0, top: 15.0),
+                            child: Text(
+                              '0',
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 12.0),
+                            ),
+                          )
+                        ],
+                      ),
                       Container(
-                        margin: EdgeInsets.only(left: 20.0, top: 10.0),
+                        margin: EdgeInsets.only(right: 211.0, bottom: 7.0),
                         child: Text(
-                          'Adarsh',
+                          '2017004845',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 12.0,
                           ),
                         ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(right: 20.0, top: 15.0),
-                        child: Text(
-                          '0',
-                          style: TextStyle(color: Colors.white, fontSize: 12.0),
-                        ),
                       )
                     ],
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(right: 211.0, bottom: 7.0),
-                    child: Text(
-                      '2017004845',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12.0,
-                      ),
-                    ),
-                  )
-                ],
-              ))),
+                  )),
+            ),
+          )),
       Padding(
           padding: const EdgeInsets.only(
               left: 0.0, right: 0.0, top: 10.0, bottom: 0.0),
@@ -406,5 +420,68 @@ class _AddMarksheetState extends State<AddMarksheet> {
             )),
       ),
     ]);
+  }
+}
+
+class MyDialog extends StatefulWidget {
+  @override
+  _MyDialogState createState() => _MyDialogState();
+}
+
+class _MyDialogState extends State<MyDialog> {
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      child: Expanded(
+        child: Container(
+          height: 150,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(top: 10),
+                child: Text(
+                  'ADARSH',
+                  style: TextStyle(
+                    color: Color(0xff262AAA),
+                    fontSize: 25,
+                  ),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Enter Marks',
+                    style: TextStyle(
+                      color: Color(0xff262AAA),
+                      fontSize: 20,
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(bottom: 15),
+                    width: 50,
+                    child: TextField(
+                        decoration: InputDecoration(
+                            enabledBorder: UnderlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Color(0xff262AAA))))),
+                  )
+                ],
+              ),
+              FlatButton(
+                onPressed: () {},
+                  child: Container(
+                margin: EdgeInsets.only(left: 180),
+                child: Text('OK',
+                    style: TextStyle(color: Color(0xff262AAA), fontSize: 15)),
+              ))
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

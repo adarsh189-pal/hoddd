@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const inactiveColour = Colors.red;
+
 class AddAttendancePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -20,6 +22,18 @@ class AddAttendance extends StatefulWidget {
 }
 
 class _AddAttendanceState extends State<AddAttendance> {
+  Color cardColour = inactiveColour;
+
+  void updateColour(int n) {
+    if (n == 1) {
+      if (cardColour == inactiveColour) {
+        cardColour = Colors.green;
+      } else {
+        cardColour = inactiveColour;
+      }
+    }
+  }
+
   List<String> _subjects = [
     'CSE 111-AUTOMATA',
     'CSE 112-DAA',
@@ -103,7 +117,8 @@ class _AddAttendanceState extends State<AddAttendance> {
               margin:
                   EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
               child: Center(
-                child: DropdownButton(isExpanded: true,
+                child: DropdownButton(
+                  isExpanded: true,
                   underline: SizedBox(),
                   dropdownColor: Color(0xff262AAA),
                   icon: Icon(Icons.arrow_drop_down, color: Colors.white),
@@ -240,67 +255,43 @@ class _AddAttendanceState extends State<AddAttendance> {
         Padding(
             padding: const EdgeInsets.only(
                 left: 10.0, right: 10.0, top: 15.0, bottom: 0.0),
-            child: Container(
-              width: double.infinity,
-              height: 80.0,
-              decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    topRight: Radius.circular(15),
-                    bottomLeft: Radius.circular(15),
-                    bottomRight: Radius.circular(15)),
-              ),
-              margin:
-                  EdgeInsets.only(left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'Adarsh',
-                    style: TextStyle(color: Colors.white),
+            child: Expanded(
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    updateColour(1);
+                  });
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 80.0,
+                  decoration: BoxDecoration(
+                    color: cardColour,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15),
+                        bottomLeft: Radius.circular(15),
+                        bottomRight: Radius.circular(15)),
                   ),
-                  SizedBox(
-                    height: 10.0,
+                  margin: EdgeInsets.only(
+                      left: 0.0, top: 0.0, right: 0.0, bottom: 0.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        'Adarsh',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text(
+                        '2017004845',
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
                   ),
-                  Text(
-                    '2017004845',
-                    style: TextStyle(color: Colors.white),
-                  )
-                ],
-              ),
-            )),
-        Padding(
-            padding: const EdgeInsets.only(
-                left: 0.0, right: 0.0, top: 15.0, bottom: 0.0),
-            child: Container(
-              width: double.infinity,
-              height: 80.0,
-              decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    topRight: Radius.circular(15),
-                    bottomLeft: Radius.circular(15),
-                    bottomRight: Radius.circular(15)),
-              ),
-              margin: EdgeInsets.only(
-                  left: 10.0, top: 0.0, right: 10.0, bottom: 0.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'Hardik',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  Text(
-                    '2017002147',
-                    style: TextStyle(color: Colors.white),
-                  )
-                ],
+                ),
               ),
             )),
         SizedBox(

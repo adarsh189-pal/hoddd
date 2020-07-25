@@ -48,34 +48,31 @@ class _AttendanceState extends State<Attendance> {
                     ),
                     margin: EdgeInsets.only(
                         left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(
-                          Icons.assignment_turned_in,
-                          size: 50.0,
-                          color: Color(0xff262AAA),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          AddAttendancePage()));
-                            });
-                          },
-                          child: Container(
-                            child: Text(
-                              'Add Attendance',
-                              style: TextStyle(
-                                  color: Color(0xff262AAA), fontSize: 15.0),
-                            ),
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => AddAttendancePage()));
+                        });
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.assignment_turned_in,
+                            size: 50.0,
+                            color: Color(0xff262AAA),
                           ),
-                        )
-                      ],
+                          Text(
+                            'Add Attendance',
+                            style: TextStyle(
+                                color: Color(0xff262AAA), fontSize: 15.0),
+                          )
+                        ],
+                      ),
                     ))),
             Padding(
               padding: const EdgeInsets.only(
@@ -93,34 +90,31 @@ class _AttendanceState extends State<Attendance> {
                   ),
                   margin: EdgeInsets.only(
                       left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(
-                        Icons.assignment,
-                        size: 50.0,
-                        color: Color(0xff262AAA),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        ViewAttendancePage()));
-                          });
-                        },
-                        child: Container(
-                          child: Text(
-                            'View Attendance',
-                            style: TextStyle(
-                                color: Color(0xff262AAA), fontSize: 15.0),
-                          ),
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ViewAttendancePage()));
+                      });
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          Icons.assignment,
+                          size: 50.0,
+                          color: Color(0xff262AAA),
                         ),
-                      )
-                    ],
+                        Text(
+                          'View Attendance',
+                          style: TextStyle(
+                              color: Color(0xff262AAA), fontSize: 15.0),
+                        ),
+                      ],
+                    ),
                   )),
             ),
             Padding(
@@ -139,34 +133,31 @@ class _AttendanceState extends State<Attendance> {
                   ),
                   margin: EdgeInsets.only(
                       left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(
-                        Icons.assignment_late,
-                        size: 50.0,
-                        color: Color(0xff262AAA),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        EditAttendancePage()));
-                          });
-                        },
-                        child: Container(
-                          child: Text(
-                            'Edit Attendance',
-                            style: TextStyle(
-                                color: Color(0xff262AAA), fontSize: 15.0),
-                          ),
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => EditAttendancePage()));
+                      });
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          Icons.assignment_late,
+                          size: 50.0,
+                          color: Color(0xff262AAA),
                         ),
-                      )
-                    ],
+                        Text(
+                          'Edit Attendance',
+                          style: TextStyle(
+                              color: Color(0xff262AAA), fontSize: 15.0),
+                        )
+                      ],
+                    ),
                   )),
             ),
             Padding(
@@ -185,37 +176,34 @@ class _AttendanceState extends State<Attendance> {
                   ),
                   margin: EdgeInsets.only(
                       left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        margin: EdgeInsets.only(left: 5),
-                        child: Icon(
-                          Icons.delete_forever,
-                          size: 50.0,
-                          color: Color(0xff262AAA),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        DeleteAttendancePage()));
-                          });
-                        },
-                        child: Container(
-                          child: Text(
-                            'Delete Attendance',
-                            style: TextStyle(
-                                color: Color(0xff262AAA), fontSize: 15.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DeleteAttendancePage()));
+                      });
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(left: 5),
+                          child: Icon(
+                            Icons.delete_forever,
+                            size: 50.0,
+                            color: Color(0xff262AAA),
                           ),
                         ),
-                      )
-                    ],
+                        Text(
+                          'Delete Attendance',
+                          style: TextStyle(
+                              color: Color(0xff262AAA), fontSize: 15.0),
+                        )
+                      ],
+                    ),
                   )),
             ),
           ]))

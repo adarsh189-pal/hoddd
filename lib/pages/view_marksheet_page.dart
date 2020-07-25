@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Marksheet.dart';
 
 class ViewMarksheetPage extends StatelessWidget {
   @override
@@ -239,61 +240,73 @@ class _ViewMarksheetState extends State<ViewMarksheet> {
           )),
       Padding(
           padding: const EdgeInsets.all(15.0),
-          child: Container(
-            height: 120,
-            width: double.infinity,
-            padding: EdgeInsets.all(10.0),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [Color(0xff262AAA), Colors.blue[900]]),
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(10),
-                  topRight: Radius.circular(10),
-                  bottomLeft: Radius.circular(10),
-                  bottomRight: Radius.circular(10)),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Row(
+          child: Expanded(
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MarkSheet()));
+                });
+              },
+              child: Container(
+                height: 120,
+                width: double.infinity,
+                padding: EdgeInsets.all(10.0),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [Color(0xff262AAA), Colors.blue[900]]),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10),
+                      bottomLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(10)),
+                ),
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
-                    Text(
-                      'TEACHER 4',
-                      style: TextStyle(color: Colors.white, fontSize: 12.0),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: <Widget>[
+                        Text(
+                          'TEACHER 4',
+                          style: TextStyle(color: Colors.white, fontSize: 12.0),
+                        ),
+                        Text(
+                          'CSE 111',
+                          style: TextStyle(color: Colors.white, fontSize: 12.0),
+                        )
+                      ],
                     ),
                     Text(
-                      'CSE 111',
-                      style: TextStyle(color: Colors.white, fontSize: 12.0),
-                    )
-                  ],
-                ),
-                Text(
-                  'Assignment 1',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 15.0,
-                  ),
-                ),
-                Text(
-                  'Time: 01:30',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12.0,
-                  ),
-                ),
-                Row(
-                  children: <Widget>[
+                      'Assignment 1',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15.0,
+                      ),
+                    ),
                     Text(
-                      '11-07-2020',
-                      style: TextStyle(color: Colors.white, fontSize: 12.0),
+                      'Time: 01:30',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12.0,
+                      ),
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Text(
+                          '11-07-2020',
+                          style: TextStyle(color: Colors.white, fontSize: 12.0),
+                        )
+                      ],
                     )
                   ],
-                )
-              ],
+                ),
+              ),
             ),
           )),
       Padding(

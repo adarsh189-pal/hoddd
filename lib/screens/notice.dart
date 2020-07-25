@@ -50,34 +50,31 @@ class _NoticeState extends State<Notice> {
                         ),
                         margin: EdgeInsets.only(
                             left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Icon(
-                              Icons.assignment_turned_in,
-                              size: 50.0,
-                              color: Color(0xff262AAA),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              AddNoticePage()));
-                                });
-                              },
-                              child: Container(
-                                child: Text(
-                                  'Add Notice',
-                                  style: TextStyle(
-                                      color: Color(0xff262AAA), fontSize: 15.0),
-                                ),
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => AddNoticePage()));
+                            });
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Icon(
+                                Icons.assignment_turned_in,
+                                size: 50.0,
+                                color: Color(0xff262AAA),
                               ),
-                            )
-                          ],
+                              Text(
+                                'Add Notice',
+                                style: TextStyle(
+                                    color: Color(0xff262AAA), fontSize: 15.0),
+                              )
+                            ],
+                          ),
                         ))),
                 Padding(
                   padding: const EdgeInsets.only(
@@ -95,34 +92,31 @@ class _NoticeState extends State<Notice> {
                       ),
                       margin: EdgeInsets.only(
                           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(
-                            Icons.poll,
-                            size: 50.0,
-                            color: Color(0xff262AAA),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            ViewNoticePage()));
-                              });
-                            },
-                            child: Container(
-                              child: Text(
-                                'View Notice',
-                                style: TextStyle(
-                                    color: Color(0xff262AAA), fontSize: 15.0),
-                              ),
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ViewNoticePage()));
+                          });
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Icon(
+                              Icons.poll,
+                              size: 50.0,
+                              color: Color(0xff262AAA),
                             ),
-                          )
-                        ],
+                            Text(
+                              'View Notice',
+                              style: TextStyle(
+                                  color: Color(0xff262AAA), fontSize: 15.0),
+                            )
+                          ],
+                        ),
                       )),
                 ),
                 Padding(
@@ -141,37 +135,34 @@ class _NoticeState extends State<Notice> {
                       ),
                       margin: EdgeInsets.only(
                           left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                            margin: EdgeInsets.only(left: 5),
-                            child: Icon(
-                              Icons.delete_forever,
-                              size: 50.0,
-                              color: Color(0xff262AAA),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            DeleteNoticePage()));
-                              });
-                            },
-                            child: Container(
-                              child: Text(
-                                'Delete Notice',
-                                style: TextStyle(
-                                    color: Color(0xff262AAA), fontSize: 15.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AddNoticePage()));
+                          });
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.only(left: 5),
+                              child: Icon(
+                                Icons.delete_forever,
+                                size: 50.0,
+                                color: Color(0xff262AAA),
                               ),
                             ),
-                          )
-                        ],
+                            Text(
+                              'Delete Notice',
+                              style: TextStyle(
+                                  color: Color(0xff262AAA), fontSize: 15.0),
+                            )
+                          ],
+                        ),
                       )),
                 ),
               ]))
